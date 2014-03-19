@@ -3,6 +3,7 @@
 
 #include "unit.h"
 #include <SFML/Graphics.hpp>
+#include "gui/Container.hpp"
 
 class Board
 {
@@ -13,8 +14,12 @@ class Board
         void draw(sf::RenderWindow &window);
         void update( double k );
 
+        void handleEvent( sf::Event &event );
+
     protected:
     private:
+
+        void moveColumn( int x, int off );
 
         Unit* data[50][50];
         sf::Sprite border[50][50];
@@ -24,6 +29,8 @@ class Board
         int n, m;
 
         sf::Texture borderTex;
+
+        Container* gui;
 
 };
 

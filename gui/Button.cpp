@@ -21,7 +21,7 @@ void Button::draw( sf::RenderWindow &window )
         glTranslatef( m_left, m_top, 0 );
 
         glBegin( GL_LINES );
-            glColor3f( 1, 1, del );
+            glColor3f( 0, 1 - del, 0  );
             glVertex2f( 0, 0 );
             glVertex2f( m_width, 0 );
             glVertex2f( m_width, 0 );

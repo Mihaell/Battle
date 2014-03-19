@@ -1,22 +1,25 @@
 # depslib dependency file v1.0
-1395261246 source:d:\battle\main.cpp
+1395266359 source:d:\battle\main.cpp
 	<SFML/Graphics.hpp>
 	"game.h"
 	<cstdio>
 
-1395261944 source:d:\battle\board.cpp
+1395267491 source:d:\battle\board.cpp
 	"board.h"
+	"gui/Button.hpp"
 	<cstdio>
 
-1395261698 d:\battle\board.h
+1395266252 d:\battle\board.h
 	"unit.h"
 	<SFML/Graphics.hpp>
+	"gui/Container.hpp"
 
-1395261895 source:d:\battle\game.cpp
+1395267205 source:d:\battle\game.cpp
 	"game.h"
 	<cstdio>
+	<SFML/OpenGL.hpp>
 
-1395260645 d:\battle\game.h
+1395265541 d:\battle\game.h
 	<SFML/Window.hpp>
 	"board.h"
 
@@ -28,13 +31,13 @@
 	"unit.h"
 	<cstdio>
 
-1395264199 source:d:\battle\gui\button.cpp
+1395267353 source:d:\battle\gui\button.cpp
 	"Button.hpp"
 
 1395264199 d:\battle\gui\button.hpp
 	"Container.hpp"
 
-1395264654 d:\battle\gui\container.hpp
+1395266785 d:\battle\gui\container.hpp
 	"../_inc_typ.hpp"
 	"../Interfaces/ICall.h"
 
@@ -66,7 +69,7 @@
 1377039003 d:\battle\interfaces\icall.h
 	<functional>
 
-1395264662 source:d:\battle\gui\container.cpp
+1395266890 source:d:\battle\gui\container.cpp
 	"Container.hpp"
 	"Gui.hpp"
 

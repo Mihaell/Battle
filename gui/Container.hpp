@@ -28,6 +28,7 @@ class Container: public ICall
         virtual bool textEntered( unsigned int code );
 
         virtual void addChild( ContainerPt child );
+        virtual ContainerPt& getChild( const std::string& id );
         virtual void setParent( ContainerPt parent );
 
         void setColor( const sf::Color& col );

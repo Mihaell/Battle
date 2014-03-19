@@ -20,11 +20,13 @@ int main(){
                 break;
 
             default:
+                myGame.handleEvent( event );
                 break;
             }
         }
 
         window.clear(sf::Color(255, 255, 255));
+        myGame.update( 0.2 );
         myGame.draw( window );
         window.display();
     }

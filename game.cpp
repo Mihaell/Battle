@@ -1,5 +1,6 @@
 #include "game.h"
 #include <cstdio>
+#include <SFML/OpenGL.hpp>
 
 Game::Game()
 {
@@ -14,10 +15,27 @@ Game::~Game()
 
 
 void Game::draw(sf::RenderWindow &window){
+
+    glMatrixMode( GL_PROJECTION );
+    glLoadIdentity();
+    gluOrtho2D( 0.0, 600, 600, 0.0 );
+
+    glMatrixMode( GL_MODELVIEW );
+    glClearColor( 0.0, 0.0, 0.0, 0.0 );
+    glLoadIdentity();
+    glEnable( GL_BLEND );
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+
     field->draw( window );
+
+    glDisable( GL_BLEND );
+    glDisable( GL_TEXTURE_2D );
 }
 
 void Game::update( double k ){
+    field->update( k );
+}
 
-
+void Game::handleEvent(sf::Event &event){
+    field->handleEvent( event );
 }

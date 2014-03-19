@@ -145,6 +145,13 @@ void Container::addChild( ContainerPt child )
     child->setParent( this );
 }
 
+ContainerPt& Container::getChild( const std::string& id )
+{
+    for (auto it: m_childs){
+        if (it->getID() == id) return it;
+    }
+}
+
 void Container::setParent( ContainerPt parent )
 {
     m_parent = parent;
