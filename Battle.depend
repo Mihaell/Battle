@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1395261246 source:d:\battle\main.cpp
+	<SFML/Graphics.hpp>
+	"game.h"
+	<cstdio>
+
+1395261783 source:d:\battle\board.cpp
+	"board.h"
+	<cstdio>
+
+1395261698 d:\battle\board.h
+	"unit.h"
+	<SFML/Graphics.hpp>
+
+1395261895 source:d:\battle\game.cpp
+	"game.h"
+	<cstdio>
+
+1395260645 d:\battle\game.h
+	<SFML/Window.hpp>
+	"board.h"
+
+1395260427 d:\battle\unit.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1395261843 source:d:\battle\unit.cpp
+	"unit.h"
+	<cstdio>
+
