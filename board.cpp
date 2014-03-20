@@ -1,6 +1,10 @@
 #include "board.h"
 #include "gui/Button.hpp"
+#include "effects/effect.h"
+#include "game.h"
 #include <cstdio>
+#include <algorithm>
+#include <iostream>
 
 Board::Board(double _x, double _y, double _w, double _h, int _n, int _m)
 {
@@ -39,6 +43,11 @@ Board::Board(double _x, double _y, double _w, double _h, int _n, int _m)
         tmp->connectCallback( [this, i](void){ return this->moveColumn( i, -1 ); } );
         gui->addChild( tmp );
     }
+    for (int i=0; i<n; i++){
+        Button* tmp = new Button("BtnATTACK" + toString(i), "", x + (n/2)*50 - 12.5, y + 50*i + 12.5, 25, 25);
+        tmp->connectCallback( [this, i](void){ return this->attackRow( i ); } );
+        gui->addChild( tmp );
+    }
 }
 
 Board::~Board()
@@ -64,6 +73,16 @@ void Board::draw(sf::RenderWindow &window){
 }
 
 void Board::update( double k ){
+
+    for (int i=0; i<n; i++){
+        for (int j=0; j<m; j++){
+            if (data[i][j] == NULL) continue;
+            double dx = ( ( j*50 + x ) - data[i][j]->getPosition().x ) / (rand()%5+10);
+            double dy = ( ( i*50 + y ) - data[i][j]->getPosition().y ) / (rand()%5+10);
+            data[i][j]->move( dx, dy );
+        }
+    }
+
     gui->update( k );
 }
 
@@ -72,9 +91,29 @@ void Board::handleEvent(sf::Event& event)
     gui->handleEvents( event );
 }
 
+void Board::attackRow(int x){
+    printf("napadam red %d\n", x);
+
+//    std::cout << gui->getChild( "BtnATTACK" + toString(x) )->m_width << std::endl;
+    Game::effManager->addEffect(new Effect( &( gui->getChild( "BtnATTACK" + toString(x) )->m_width ), Efekt::LINEAR_DECREASE ) );
+    Game::effManager->addEffect(new Effect( &( gui->getChild( "BtnATTACK" + toString(x) )->m_left ), Efekt::LINEAR_INCREASE ) );
+    gui->getChild( "BtnATTACK" + toString(x) )->m_updating = false;
+//    std::cout << gui->getChild( "BtnATTACK" + toString(x) )->m_width << std::endl;
+}
 
 void Board::moveColumn(int x, int off)
 {
+    if (off == 1){
+        for (int i=0; i<n-1; i++){
+            std::swap( data[i][x], data[i+1][x] );
+        }
+    } else
+    if (off == -1){
+        for (int i=n-1; i>0; i--){
+            std::swap( data[i][x], data[i-1][x] );
+        }
+    }
+
     printf("pomicem %d stupac\n", x);
     printf("pomicem prema %d\n", off);
 }

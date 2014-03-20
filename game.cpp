@@ -2,6 +2,8 @@
 #include <cstdio>
 #include <SFML/OpenGL.hpp>
 
+EffectManager* Game::effManager = new EffectManager;
+
 Game::Game()
 {
     field = new Board( 50, 50, 400, 400, 10, 10 );
@@ -34,6 +36,7 @@ void Game::draw(sf::RenderWindow &window){
 
 void Game::update( double k ){
     field->update( k );
+    effManager->update( k );
 }
 
 void Game::handleEvent(sf::Event &event){

@@ -29,8 +29,33 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 		</Compiler>
+		<Linker>
+			<Add option="-lsfml-window" />
+			<Add option="-lsfml-system" />
+			<Add option="-lsfml-graphics" />
+			<Add library="glu32" />
+			<Add library="opengl32" />
+		</Linker>
+		<Unit filename="Interfaces/ICall.cpp" />
+		<Unit filename="Interfaces/ICall.h" />
+		<Unit filename="board.cpp" />
+		<Unit filename="board.h" />
+		<Unit filename="customStructs.cpp" />
+		<Unit filename="customStructs.hpp" />
+		<Unit filename="effects/effect.cpp" />
+		<Unit filename="effects/effect.h" />
+		<Unit filename="game.cpp" />
+		<Unit filename="game.h" />
+		<Unit filename="gui/Button.cpp" />
+		<Unit filename="gui/Button.hpp" />
+		<Unit filename="gui/Container.cpp" />
+		<Unit filename="gui/Container.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="unit.cpp" />
+		<Unit filename="unit.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -20,6 +20,7 @@ class Board
     private:
 
         void moveColumn( int x, int off );
+        void attackRow( int x );
 
         Unit* data[50][50];
         sf::Sprite border[50][50];

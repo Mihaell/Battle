@@ -4,24 +4,29 @@
 	"game.h"
 	<cstdio>
 
-1395267491 source:d:\battle\board.cpp
+1395274887 source:d:\battle\board.cpp
 	"board.h"
 	"gui/Button.hpp"
+	"effects/effect.h"
+	"game.h"
 	<cstdio>
+	<algorithm>
+	<iostream>
 
-1395266252 d:\battle\board.h
+1395273193 d:\battle\board.h
 	"unit.h"
 	<SFML/Graphics.hpp>
 	"gui/Container.hpp"
 
-1395267205 source:d:\battle\game.cpp
+1395273344 source:d:\battle\game.cpp
 	"game.h"
 	<cstdio>
 	<SFML/OpenGL.hpp>
 
-1395265541 d:\battle\game.h
+1395273204 d:\battle\game.h
 	<SFML/Window.hpp>
 	"board.h"
+	"effects/effectManager.h"
 
 1395260427 d:\battle\unit.h
 	<SFML/Graphics.hpp>
@@ -37,7 +42,7 @@
 1395264199 d:\battle\gui\button.hpp
 	"Container.hpp"
 
-1395266785 d:\battle\gui\container.hpp
+1395272813 d:\battle\gui\container.hpp
 	"../_inc_typ.hpp"
 	"../Interfaces/ICall.h"
 
@@ -119,4 +124,21 @@
 
 1374746254 source:d:\battle\interfaces\icall.cpp
 	"ICall.h"
+
+1395275271 source:d:\battle\effects\effect.cpp
+	"effect.h"
+	<cstdio>
+	<iostream>
+
+1395274485 d:\battle\effects\effect.h
+	<map>
+	<iostream>
+
+1395275209 source:d:\battle\effects\effectmanager.cpp
+	"effectManager.h"
+	<cstdio>
+
+1395272469 d:\battle\effects\effectmanager.h
+	<vector>
+	"effect.h"
 

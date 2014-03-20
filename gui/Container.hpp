@@ -63,7 +63,7 @@ class Container: public ICall
         virtual int getIntValue() const{};
         virtual bool isSelected() const{};
 
-    protected:
+//    protected:
 
         bool m_hovered;
         bool m_focused;
